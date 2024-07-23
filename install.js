@@ -5,7 +5,7 @@ module.exports = {
       method: "shell.run",
       params: {
         message: [
-          "git clone https://github.com/Craftech360-projects/comfyui-new.git app",
+          "git clone https://github.com/Craftech360-projects/aiart.git app",
         ]
       }
     },
