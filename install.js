@@ -5,7 +5,7 @@ module.exports = {
       method: "shell.run",
       params: {
         message: [
-          "git clone https://github.com/Craftech360-projects/aiart.git app",
+          "git clone https://github.com/Craftech360-projects/newAi7 app",
         ]
       }
     },
@@ -45,6 +45,9 @@ module.exports = {
       params: {
         html: "Click the 'start' tab to get started!"
       }
+
+  
     }
   ]
 }
+
