@@ -1,4 +1,5 @@
 const path = require('path')
+
 module.exports = {
   version: "1.5",
   title: "PCM",
@@ -6,7 +7,7 @@ module.exports = {
   icon: "icon.png",
   menu: async (kernel) => {
     let installing = await kernel.running(__dirname, "install.js")
-    let installed = await kernel.exists(__dirname, "app", "npm")
+    let installed = await kernel.exists(__dirname, "app", "node_modules")
     let running = await kernel.running(__dirname, "start.js")
     if (installing) {
       return [{
@@ -63,8 +64,7 @@ module.exports = {
         icon: "fa-solid fa-plug",
         text: "Install",
         href: "install.js",
-      }
-    ]
+      }]
     }
   }
 }
