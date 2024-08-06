@@ -7,7 +7,7 @@ module.exports = {
       method: "shell.run",
       params: {
         message: [
-          "git clonehttps://github.com/Craftech360-projects/fastest_finger app",
+          "git clone https://github.com/Craftech360-projects/fastest_finger app",
         ]
       }
     },
