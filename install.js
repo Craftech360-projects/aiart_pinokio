@@ -21,20 +21,14 @@ module.exports = {
         ]
       }
     },
-    // Uninstall and install the specified versions of torch if needed
-    // Uncomment this step to add automatic venv deduplication (Experimental)
     {
       method: "fs.link",
       params: {
-        venv: "app/env"
-      }
-    },
-    {
-      method: "notify",
       params: {
         html: "Click the 'start' tab to get started!"
       }
     }
+  }
   ]
 };
 
