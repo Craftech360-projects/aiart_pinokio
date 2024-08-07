@@ -42,8 +42,6 @@
 //   ]
 // }
 
-
-
 module.exports = {
   daemon: true,
   run: [
@@ -52,7 +50,7 @@ module.exports = {
       params: {
         path: "app/frontend", // Path to frontend directory
         message: [
-          "npm run dev", // Command to run the frontend
+          "ng serve", // Command to run the frontend
         ],
         on: [{
           "event": "/http:\/\/[0-9:.]+/",
@@ -71,7 +69,7 @@ module.exports = {
       params: {
         path: "app/backend", // Path to backend directory
         message: [
-          "npm run dev", // Command to run the backend
+          "node index.js", // Command to run the backend
         ],
         on: [{
           "event": "/http:\/\/[0-9:.]+/",
