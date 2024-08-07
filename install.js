@@ -151,7 +151,7 @@ module.exports = {
       method: "shell.run",
       params: {
         message: [
-          "git clone https://github.com/Craftech360-projects/frontend-repo app/frontend"
+          "git clone https://github.com/Craftech360-projects/digital-tree.git app/frontend"
         ]
       }
     },
@@ -160,7 +160,7 @@ module.exports = {
       method: "shell.run",
       params: {
         message: [
-          "git clone https://github.com/Craftech360-projects/backend-repo app/backend"
+          "git clone https://github.com/Craftech360-projects/digital-tree-backend.git app/backend"
         ]
       }
     },
@@ -201,11 +201,11 @@ const runCommands = async () => {
     console.log('App directory created.');
 
     // Clone the frontend repository
-    await execShellCommand('git clone https://github.com/Craftech360-projects/frontend-repo app/frontend');
+    await execShellCommand('git clone https://github.com/Craftech360-projects/digital-tree.git app/frontend');
     console.log('Frontend repository cloned.');
 
     // Clone the backend repository
-    await execShellCommand('git clone https://github.com/Craftech360-projects/backend-repo app/backend');
+    await execShellCommand('git clone https://github.com/Craftech360-projects/digital-tree-backend.git app/backend');
     console.log('Backend repository cloned.');
 
     // Install Node.js dependencies in the frontend directory
