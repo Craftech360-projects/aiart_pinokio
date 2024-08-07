@@ -7,7 +7,7 @@ module.exports = {
       method: "shell.run",
       params: {
         message: [
-          "git clone https://github.com/Craftech360-projects/digital-tree.git app",
+          "git clone https://github.com/Craftech360-projects/digital-tree-backend.git app",
         ]
       }
     },
