@@ -2,7 +2,7 @@ const path = require('path')
 
 module.exports = {
   version: "1.2",
-  title: "Digital Tree 2",
+  title: "Digital Tree 4",
   description: "Phased Consistency Model - generate high quality images with 2 steps https://huggingface.co/spaces/radames/Phased-Consistency-Model-PCM",
   icon: "logo.jpeg",
   menu: async (kernel) => {
