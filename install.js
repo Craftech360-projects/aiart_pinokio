@@ -1,48 +1,52 @@
-const { exec } = require('child_process');
-
 module.exports = {
   run: [
-    // Clone the repository
+    // Edit this step to customize the git repository to use
     {
       method: "shell.run",
       params: {
         message: [
-          "git clone https://github.com/Craftech360-projects/digital-tree-backend/tree/zenovo-backend app",
+          "git clone https://github.com/Craftech360-projects/AI_Photobooth_v3.git app",
         ]
       }
     },
-    // Install Node.js dependencies
+    // Delete this step if your project does not use torch
+    {
+      method: "script.start",
+      params: {
+        uri: "torch.js",
+        params: {
+          venv: "env",                // Edit this to customize the venv folder path
+          path: "app",                // Edit this to customize the path to start the shell from
+          xformers: true   // uncomment this line if your project requires xformers
+        }
+      }
+    },
+    // Edit this step with your custom install commands
     {
       method: "shell.run",
       params: {
+        venv: "env",                // Edit this to customize the venv folder path
         path: "app",                // Edit this to customize the path to start the shell from
         message: [
-          "npm install"
+          "pip install gradio devicetorch",
+          "pip install -r requirements.txt"
         ]
       }
     },
+    //  Uncomment this step to add automatic venv deduplication (Experimental)
     {
       method: "fs.link",
       params: {
+        venv: "app/env"
+      }
+    },
+    {
+      method: "notify",
       params: {
         html: "Click the 'start' tab to get started!"
       }
-    }
-  }
-  ]
-};
 
-const execShellCommand = (cmd, cwd = '.') => {
-  return new Promise((resolve, reject) => {
-    exec(cmd, { cwd }, (error, stdout, stderr) => {
-      if (error) {
-        console.error(`Error executing command: ${cmd}`);
-        console.error(stderr);
-        reject(error);
-      } else {
-        console.log(stdout);
-        resolve(stdout);
-      }
-    });
-  });
-};
+  
+    }
+  ]
+}
